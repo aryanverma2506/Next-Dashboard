@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { signOut as authLogout } from "next-auth/react";
 
 import { UserContext } from "./UserContext";
@@ -28,8 +27,6 @@ const UserProvider: React.FC<UserProviderProps> = (props) => {
   const [educations, setEducations] = useState<Education[]>([]);
   const [connections, setConnections] = useState<string[]>([]);
 
-  const router = useRouter();
-
   const { sendRequest } = useHttpClient();
 
   const logout = useCallback(async () => {
@@ -48,7 +45,7 @@ const UserProvider: React.FC<UserProviderProps> = (props) => {
     setExperiences(() => []);
     setEducations(() => []);
     setConnections(() => []);
-  }, [router, sendRequest]);
+  }, []);
 
   const login = useCallback(
     ({

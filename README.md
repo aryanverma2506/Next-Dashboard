@@ -1,4 +1,4 @@
-# [Next-Dashboard](https://next-dashboard.web.app/)
+# [Next-Dashboard](https://next-dashboard-ashy.vercel.app/)
 
 This repository contains a web application with frontend and backend built using Next.js. Below are the instructions on how to install, deploy, run, and use the web app.
 
