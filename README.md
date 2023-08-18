@@ -1,12 +1,12 @@
 # [Next-Dashboard](https://next-dashboard-ashy.vercel.app/)
 
-This repository contains a web application with frontend and backend built using Next.js. Below are the instructions on how to install, deploy, run, and use the web app.
+This repository contains a web application with frontend and backend built using Next.js (with redis caching). Below are the instructions on how to install, deploy, run, and use the web app.
 
 ## Note
 
-> * You may need to configure your own `.env` file, although I have already provided sample configuration file named `.env.sample` inside the directories.
-> * The preview of the web links is working, but you need to wait until it fetches the data from the server, which may take up to 4-5 minutes for the first request. After that, it will take less time.
-> * You can verify the application by clicking on the link embedded in the title of the README.
+> - You may need to configure your own `.env` file, although I have already provided sample configuration file named `.env.sample` inside the directories.
+> - The preview of the web links is working, but you need to wait until it fetches the data from the server, which may take up to 4-5 minutes for the first request. After that, it will take less time.
+> - You can verify the application by clicking on the link embedded in the title of the README.
 
 ## Installation
 
@@ -54,18 +54,18 @@ With the application deployed, you can now access the web app through your brows
 ```markdown
 Next-Dashboard/
 ├── public/
-│   └── assets/
+│ └── assets/
 ├── src/
-│   ├── app/
-│   ├── components/
-│   ├── context/
-│   ├── hooks/
-│   ├── interfaces/
-│   ├── lib/
-│   ├── models/
-│   ├── utils/
-│   ├── App.tsx
-│   └── globals.d.ts
+│ ├── app/
+│ ├── components/
+│ ├── context/
+│ ├── hooks/
+│ ├── interfaces/
+│ ├── lib/
+│ ├── models/
+│ ├── utils/
+│ ├── App.tsx
+│ └── globals.d.ts
 ├── .gitignore
 ├── .eslintrc.json
 ├── next-env.d.ts
