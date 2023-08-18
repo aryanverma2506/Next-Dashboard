@@ -96,7 +96,7 @@ const UserProvider: React.FC<UserProviderProps> = (props) => {
       }
     }
     getUserInfo();
-  }, [session?.user]);
+  }, [session?.user, login, sendRequest]);
 
   return (
     <UserContext.Provider
