@@ -1,34 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [Next-Dashboard](https://next-dashboard.web.app/)
 
-## Getting Started
+This repository contains a web application with frontend and backend built using Next.js. Below are the instructions on how to install, deploy, run, and use the web app.
 
-First, run the development server:
+## Note
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+> * You may need to configure your own `.env` file, although I have already provided sample configuration file named `.env.sample` inside the directories.
+> * The preview of the web links is working, but you need to wait until it fetches the data from the server, which may take up to 4-5 minutes for the first request. After that, it will take less time.
+> * You can check the application by clicking on the title of the application.
+
+## Installation
+
+1. Clone the repository to your local machine and install the dependencies:
+
+```markdown
+git clone https://github.com/aryanverma2506/Next-Dashboard.git
+cd Next-Dashboard
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To deploy the application, you have two options:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Development Build: Run the application in development mode with hot-reloading.
 
-## Learn More
+```markdown
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+By default, the application will run on [http://localhost:3000](http://localhost:3000).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Production Build: Build the application for production.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```markdown
+npm run build
+npm start
+```
 
-## Deploy on Vercel
+After running the production build, you will have a build directory containing the optimized files.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+With the application deployed, you can now access the web app through your browser.
+
+1. Open your web browser and go to [http://localhost:3000](http://localhost:3000) (or the specified port if you modified it).
+
+2. The web app will load, and now you need to register by providing the information for the required fields.
+
+3. After registering, you can view and manage your profile, as well as connect with other users through connections.
+
+## Folder Structure
+
+```markdown
+Next-Dashboard/
+├── public/
+│   └── assets/
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── context/
+│   ├── hooks/
+│   ├── interfaces/
+│   ├── lib/
+│   ├── models/
+│   ├── utils/
+│   ├── App.tsx
+│   └── globals.d.ts
+├── .gitignore
+├── .eslintrc.json
+├── next-env.d.ts
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── README.md
+└── ...
+```
