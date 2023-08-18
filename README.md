@@ -4,8 +4,7 @@ This repository contains a web application with frontend and backend built using
 
 ## Note
 
-> - You may need to configure your own `.env` file, although I have already provided sample configuration file named `.env.sample` inside the directories.
-> - The preview of the web links is working, but you need to wait until it fetches the data from the server, which may take up to 4-5 minutes for the first request. After that, it will take less time.
+> - You may need to configure your own `.env` file, although I have already provided sample configuration file named `.env.sample` inside the directory.
 > - You can verify the application by clicking on the link embedded in the title of the README.
 
 ## Installation
