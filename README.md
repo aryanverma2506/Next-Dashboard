@@ -1,6 +1,6 @@
 # [Next-Dashboard](https://next-dashboard-ashy.vercel.app/)
 
-This repository contains a web application with frontend and backend built using Next.js (with redis caching). Below are the instructions on how to install, deploy, run, and use the web app.
+This repository contains a web application with frontend and backend built using Next.js (with redis caching and next-auth sessions). Below are the instructions on how to install, deploy, run, and use the web app.
 
 ## Note
 
