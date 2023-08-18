@@ -107,7 +107,7 @@ const MyConnections: React.FC = () => {
                         Connect
                       </Button>
                     </Typography>
-                    <div className="min-w-max h-28 rounded-full">
+                    <div className="w-28 h-28 rounded-full">
                       {connection.profilePicUrl && (
                         <Image
                           width={100}
@@ -150,7 +150,7 @@ const MyConnections: React.FC = () => {
                     Remove Connection
                   </Button>
                 </Typography>
-                <div className="min-w-max h-28 rounded-full">
+                <div className="w-28 h-28 rounded-full">
                   {connection.profilePicUrl && (
                     <Image
                       width={100}

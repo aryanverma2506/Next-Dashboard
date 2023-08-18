@@ -39,7 +39,15 @@ export async function PUT(req: NextRequest) {
       },
     ];
 
+    const oldConnectedUser = (await UserModel.findOne({ _id: userId })
+      .select({
+        _id: 0,
+        email: 1,
+      })
+      .lean()) as Record<string, string>;
+
     await redis.del(session.user?.email);
+    oldConnectedUser && (await redis.del(oldConnectedUser.email));
 
     const result = await UserModel.bulkWrite(operations, { ordered: false });
 
@@ -107,7 +115,15 @@ export async function DELETE(req: Request) {
       },
     ];
 
+    const newConnectedUser = (await UserModel.findOne({ _id: userId })
+      .select({
+        _id: 0,
+        email: 1,
+      })
+      .lean()) as Record<string, string>;
+
     await redis.del(session.user?.email);
+    newConnectedUser && (await redis.del(newConnectedUser.email));
 
     const result = await UserModel.bulkWrite(operations, { ordered: false });
 
