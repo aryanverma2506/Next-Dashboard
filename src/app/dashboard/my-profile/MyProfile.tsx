@@ -161,129 +161,131 @@ const MyProfile: React.FC = () => {
         closeModal={() => setIsModalOpen((prevState) => !prevState)}
         submitHandler={profileUpdateHandler}
       >
-        {(() => {
-          switch (editFieldType) {
-            case "name":
-              !name && setName(() => nameCtx);
-              return (
-                <TextField
-                  type="name"
-                  required
-                  label="Your Name"
-                  value={name}
-                  onChange={(e) => e && setName(() => e.target.value)}
-                />
-              );
-            case "email":
-              !email && setEmail(() => emailCtx);
-              return (
-                email && (
+        <Card className="flex flex-col gap-4 py-2 px-4 border-2 border-black h-full overflow-y-auto">
+          {(() => {
+            switch (editFieldType) {
+              case "name":
+                !name && setName(() => nameCtx);
+                return (
                   <TextField
-                    type="email"
+                    type="name"
                     required
-                    label="E-Mail"
-                    value={email}
-                    onChange={(e) => e && setEmail(() => e.target.value)}
+                    label="Your Name"
+                    value={name}
+                    onChange={(e) => e && setName(() => e.target.value)}
                   />
-                )
-              );
-            case "mobileNo":
-              !mobileNo && setMobileNo(() => mobileNoCtx);
-              return (
-                mobileNo && (
-                  <div>
-                    <PhoneInput value={mobileNo} onChange={setMobileNo} />
-                  </div>
-                )
-              );
-            case "profilePic":
-              return (
-                <div className="relative mx-auto w-40 h-40 rounded-full border-4 border-blue-500">
-                  {(profilePic || profilePicUrlCtx) && (
-                    <Image
-                      ref={previewAvatarRef}
-                      priority
-                      width={100}
-                      height={100}
-                      alt={profilePic ? profilePic.name : "User profile"}
-                      src={
-                        profilePic
-                          ? URL.createObjectURL(profilePic)
-                          : profilePicUrlCtx
-                      }
-                      className="w-full h-full rounded-full bg-white"
+                );
+              case "email":
+                !email && setEmail(() => emailCtx);
+                return (
+                  email && (
+                    <TextField
+                      type="email"
+                      required
+                      label="E-Mail"
+                      value={email}
+                      onChange={(e) => e && setEmail(() => e.target.value)}
                     />
-                  )}
-                  <Input
-                    type="file"
-                    accept="image/*"
-                    style={{ display: "none" }}
-                    placeholder="No file chosen"
-                    className="absolute flex items-center justify-center w-8 h-8 text-sm text-[#1976d2] bg-white hover:text-white hover:bg-[#1976d2] border-2 border-[#1976d2] right-2 bottom-2 rounded-full focus:none shadow-2xl"
-                    callback={setProfilePic}
-                  >
-                    <i className="fa-solid fa-camera"></i>
-                  </Input>
-                </div>
-              );
-            case "about":
-              !about && setAbout(() => aboutCtx);
-              return (
-                about && (
-                  <TextField
-                    multiline
-                    rows={4}
-                    label="About"
-                    value={about}
-                    onChange={(e) => e && setAbout(() => e.target.value)}
-                  />
-                )
-              );
-            case "skills":
-              !skills && setSkills(() => skillsCtx);
-              return (
-                skills && (
-                  <SelectSkills
-                    skills={skills}
-                    setSkills={setSkills}
-                    skillOptions={["React", "Typescript"]}
-                  />
-                )
-              );
-            case "certifications":
-              !certifications && setCertifications(() => certificationsCtx);
-              return (
-                certifications && (
-                  <CertificationInput
-                    certifications={certifications}
-                    setCertifications={setCertifications}
-                  />
-                )
-              );
-            case "experiences":
-              !experiences && setExperiences(() => experiencesCtx);
-              return (
-                experiences && (
-                  <ExperienceInput
-                    experiences={experiences}
-                    setExperiences={setExperiences}
-                  />
-                )
-              );
-            case "educations":
-              !educations && setEducations(() => educationsCtx);
-              return (
-                educations && (
-                  <EducationInput
-                    educations={educations}
-                    setEducations={setEducations}
-                  />
-                )
-              );
-            default:
-              return <></>; // Render nothing if editFieldType doesn't match any case
-          }
-        })()}
+                  )
+                );
+              case "mobileNo":
+                !mobileNo && setMobileNo(() => mobileNoCtx);
+                return (
+                  mobileNo && (
+                    <div>
+                      <PhoneInput value={mobileNo} onChange={setMobileNo} />
+                    </div>
+                  )
+                );
+              case "profilePic":
+                return (
+                  <div className="relative mx-auto w-40 h-40 rounded-full border-4 border-blue-500">
+                    {(profilePic || profilePicUrlCtx) && (
+                      <Image
+                        ref={previewAvatarRef}
+                        priority
+                        width={100}
+                        height={100}
+                        alt={profilePic ? profilePic.name : "User profile"}
+                        src={
+                          profilePic
+                            ? URL.createObjectURL(profilePic)
+                            : profilePicUrlCtx
+                        }
+                        className="w-full h-full rounded-full bg-white"
+                      />
+                    )}
+                    <Input
+                      type="file"
+                      accept="image/*"
+                      style={{ display: "none" }}
+                      placeholder="No file chosen"
+                      className="absolute flex items-center justify-center w-8 h-8 text-sm text-[#1976d2] bg-white hover:text-white hover:bg-[#1976d2] border-2 border-[#1976d2] right-2 bottom-2 rounded-full focus:none shadow-2xl"
+                      callback={setProfilePic}
+                    >
+                      <i className="fa-solid fa-camera"></i>
+                    </Input>
+                  </div>
+                );
+              case "about":
+                !about && setAbout(() => aboutCtx);
+                return (
+                  about && (
+                    <TextField
+                      multiline
+                      rows={4}
+                      label="About"
+                      value={about}
+                      onChange={(e) => e && setAbout(() => e.target.value)}
+                    />
+                  )
+                );
+              case "skills":
+                !skills && setSkills(() => skillsCtx);
+                return (
+                  skills && (
+                    <SelectSkills
+                      skills={skills}
+                      setSkills={setSkills}
+                      skillOptions={["React", "Typescript"]}
+                    />
+                  )
+                );
+              case "certifications":
+                !certifications && setCertifications(() => certificationsCtx);
+                return (
+                  certifications && (
+                    <CertificationInput
+                      certifications={certifications}
+                      setCertifications={setCertifications}
+                    />
+                  )
+                );
+              case "experiences":
+                !experiences && setExperiences(() => experiencesCtx);
+                return (
+                  experiences && (
+                    <ExperienceInput
+                      experiences={experiences}
+                      setExperiences={setExperiences}
+                    />
+                  )
+                );
+              case "educations":
+                !educations && setEducations(() => educationsCtx);
+                return (
+                  educations && (
+                    <EducationInput
+                      educations={educations}
+                      setEducations={setEducations}
+                    />
+                  )
+                );
+              default:
+                return <></>; // Render nothing if editFieldType doesn't match any case
+            }
+          })()}
+        </Card>
       </OverlayModal>
       <Card className="h-48 p-5 bg-violet-950">
         <Typography variant="h4" className="uppercase text-white">

@@ -18,7 +18,7 @@ const OverlayModal: React.FC<OverlayModalProps> = (props) => {
     >
       <Fade in={isOpen}>
         <form
-          className="bg-white mx-auto w-4/6 min-w-max h-[500px] p-4"
+          className="bg-white mx-auto w-4/6 min-w-min h-[500px] p-4"
           onSubmit={submitHandler}
         >
           <div className="grid items-center h-[85%] overflow-y-auto mb-4 pt-2">
