@@ -425,7 +425,7 @@ const MyProfile: React.FC = () => {
                         className="w-full h-full rounded-md bg-white"
                       />
                     </div>
-                    <Typography className="flex flex-col items-center w-full text-md">
+                    <Typography className="flex flex-col items-center w-full text-md break-all sm:break-words">
                       <strong>{certificate}</strong>
                       <span>{certificationsCtx[certificate]}</span>
                     </Typography>
@@ -445,7 +445,7 @@ const MyProfile: React.FC = () => {
                 {experiencesCtx.map((experience) => (
                   <InfoCard key={new Date().toISOString() + Math.random()}>
                     <div className="flex justify-between">
-                      <div className="grid grid-cols-2 gap-5 w-1/2 text-sm">
+                      <div className="grid grid-cols-2 gap-5 w-1/2 text-sm break-all sm:break-words">
                         <strong>{experience.duration}</strong>
                         <strong>{experience.employmentType}</strong>
                         <span>{experience.organizationName}</span>
@@ -475,7 +475,7 @@ const MyProfile: React.FC = () => {
                   <InfoCard key={new Date().toISOString() + Math.random()}>
                     <Typography
                       variant="h5"
-                      className="uppercase text-violet-500"
+                      className="uppercase text-violet-500 break-all"
                     >
                       <strong>{education.instituteName}</strong>
                     </Typography>

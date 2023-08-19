@@ -43,7 +43,10 @@ const EducationInput: React.FC<EducationInputProps> = (props) => {
 
   return (
     <div>
-      <Typography variant="h6" className="block max-w-full hyphens-auto">
+      <Typography
+        variant="h6"
+        className="block max-w-full hyphens-auto break-all sm:break-words"
+      >
         Education
       </Typography>
       <div className="flex flex-col gap-4">
@@ -97,7 +100,7 @@ const EducationInput: React.FC<EducationInputProps> = (props) => {
             <div className="flex flex-col gap-4">
               <Typography
                 variant="body1"
-                className="block max-w-full hyphens-auto"
+                className="block max-w-full hyphens-auto break-all sm:break-words"
               >
                 <strong>Institute: </strong>
                 {education.instituteName}
@@ -105,14 +108,14 @@ const EducationInput: React.FC<EducationInputProps> = (props) => {
               <div className="flex justify-between gap-4">
                 <Typography
                   variant="body1"
-                  className="block max-w-full hyphens-auto"
+                  className="block max-w-full hyphens-auto break-all sm:break-words"
                 >
                   <strong>Duration: </strong>
                   {education.duration}
                 </Typography>
                 <Typography
                   variant="body1"
-                  className="block max-w-full hyphens-auto"
+                  className="block max-w-full hyphens-auto break-all sm:break-words"
                 >
                   <strong>Course Type: </strong>
                   {education.courseType}
@@ -120,7 +123,7 @@ const EducationInput: React.FC<EducationInputProps> = (props) => {
               </div>
               <Typography
                 variant="body1"
-                className="block max-w-full hyphens-auto"
+                className="block max-w-full hyphens-auto break-all sm:break-words"
               >
                 <strong>More Info: </strong>
                 <span>{education.moreInfo}</span>

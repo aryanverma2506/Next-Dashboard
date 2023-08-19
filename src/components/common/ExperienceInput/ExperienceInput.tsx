@@ -42,7 +42,10 @@ const ExperienceInput: React.FC<ExperienceInputProps> = (props) => {
 
   return (
     <div>
-      <Typography variant="h6" className="block max-w-full hyphens-auto">
+      <Typography
+        variant="h6"
+        className="block max-w-full hyphens-auto break-all sm:break-words"
+      >
         Work Experience
       </Typography>
       <div className="flex flex-col gap-4">
@@ -96,28 +99,28 @@ const ExperienceInput: React.FC<ExperienceInputProps> = (props) => {
             <div className="grid grid-cols-2 gap-4">
               <Typography
                 variant="body1"
-                className="block max-w-full hyphens-auto"
+                className="block max-w-full hyphens-auto break-all sm:break-words"
               >
                 <strong>Duration: </strong>
                 {experience.duration}
               </Typography>
               <Typography
                 variant="body1"
-                className="block max-w-full hyphens-auto"
+                className="block max-w-full hyphens-auto break-all sm:break-words"
               >
                 <strong>Employment Type: </strong>
                 {experience.employmentType}
               </Typography>
               <Typography
                 variant="body1"
-                className="block max-w-full hyphens-auto"
+                className="block max-w-full hyphens-auto break-all sm:break-words"
               >
                 <strong>Organization: </strong>
                 {experience.organizationName}
               </Typography>
               <Typography
                 variant="body1"
-                className="block max-w-full hyphens-auto"
+                className="block max-w-full hyphens-auto break-all sm:break-words"
               >
                 <strong>Job Role: </strong>
                 {experience.jobRole}

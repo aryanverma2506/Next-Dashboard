@@ -73,7 +73,7 @@ const CertificationInput: React.FC<CertificationInputProps> = (props) => {
             >
               <Typography
                 variant="body1"
-                className="block max-w-full hyphens-auto"
+                className="block max-w-full hyphens-auto break-all sm:break-words"
               >
                 <strong>{key}: </strong>
                 {value}
