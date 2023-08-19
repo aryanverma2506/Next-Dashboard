@@ -1,21 +1,5 @@
+import { SendRequestFunction } from "@/interfaces/HttpRequest";
 import { useCallback, useEffect, useRef, useState } from "react";
-
-interface RequestConfig {
-  url: string;
-  method?: "GET" | "PUT" | "PATCH" | "POST" | "DELETE";
-  credentials?: RequestCredentials;
-  headers?: {
-    [props: string]: string;
-  };
-  body?: BodyInit | null;
-  mode?: RequestMode;
-  cache?: RequestCache;
-  isCustomUrl?: boolean;
-}
-
-type SendRequestFunction = <T = any>(
-  requestConfig: RequestConfig
-) => Promise<T>;
 
 export function useHttpClient(): {
   readonly isLoading: boolean;

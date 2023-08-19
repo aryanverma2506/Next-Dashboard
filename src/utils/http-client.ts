@@ -1,18 +1,4 @@
-interface RequestConfig {
-  url: string;
-  method?: "GET" | "PUT" | "PATCH" | "POST" | "DELETE";
-  credentials?: RequestCredentials;
-  headers?: {
-    [props: string]: string;
-  };
-  body?: BodyInit | null;
-  cache?: RequestCache;
-  isCustomUrl?: boolean;
-}
-
-type SendRequestFunction = <T = any>(
-  requestConfig: RequestConfig
-) => Promise<T>;
+import { SendRequestFunction } from "@/interfaces/HttpRequest";
 
 const httpClient: SendRequestFunction = async (requestConfig) => {
   const httpAbortCtrl = new AbortController();
@@ -28,6 +14,7 @@ const httpClient: SendRequestFunction = async (requestConfig) => {
           : "include",
         headers: requestConfig.headers || {},
         body: requestConfig.body || null,
+        mode: requestConfig.mode,
         cache: requestConfig.cache || "no-cache",
         signal: httpAbortCtrl.signal,
       }

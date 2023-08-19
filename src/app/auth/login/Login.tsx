@@ -6,17 +6,15 @@ import { signIn as authLogin } from "next-auth/react";
 import { Button, Card } from "@mui/material";
 
 import LoadingSpinner from "@/components/common/LoadingSpinner/LoadingSpinner";
-import { useHttpClient } from "@/hooks/useHttpClient-hook";
 
 const Login: React.FC = () => {
-
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   async function loginHandler(event: React.FormEvent) {
     event.preventDefault();
-    setIsLoading(() => true)
+    setIsLoading(() => true);
     try {
       await authLogin("credentials", {
         email: email,
@@ -27,7 +25,7 @@ const Login: React.FC = () => {
     } catch (error: any) {
       console.error(error.message);
     }
-    setIsLoading(() => false)
+    setIsLoading(() => false);
   }
 
   return (

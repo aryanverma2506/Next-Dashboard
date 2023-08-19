@@ -14,7 +14,6 @@ import EditButton from "@/components/common/EditButton/EditButton";
 import OverlayModal from "@/components/common/OverlayModal/OverlayModal";
 import { UserContext, UserContextType } from "@/context/User/UserContext";
 import { useHttpClient } from "@/hooks/useHttpClient-hook";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 import { Experience } from "@/interfaces/Experience";
 import { Education } from "@/interfaces/Education";

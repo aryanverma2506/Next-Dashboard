@@ -71,7 +71,7 @@ const MyConnections: React.FC = () => {
         </Typography>
       </Card>
       {isLoading ? (
-        <LoadingSpinner className="min-h-[460px]" />
+        <LoadingSpinner className="min-h-[400px]" />
       ) : (
         <div className="flex flex-col flex-col-reverse">
           <div>
