@@ -38,7 +38,7 @@ npm start
 
 After running the production build, you will have a build directory containing the optimized files.
 
-# Usage
+## Usage
 
 With the application deployed, you can now access the web app through your browser.
 
@@ -53,18 +53,18 @@ With the application deployed, you can now access the web app through your brows
 ```markdown
 Next-Dashboard/
 ├── public/
-│ └── assets/
+│   └── assets/
 ├── src/
-│ ├── app/
-│ ├── components/
-│ ├── context/
-│ ├── hooks/
-│ ├── interfaces/
-│ ├── lib/
-│ ├── models/
-│ ├── utils/
-│ ├── App.tsx
-│ └── globals.d.ts
+│   ├── app/
+│   ├── components/
+│   ├── context/
+│   ├── hooks/
+│   ├── interfaces/
+│   ├── lib/
+│   ├── models/
+│   ├── utils/
+│   ├── App.tsx
+│   └── globals.d.ts
 ├── .gitignore
 ├── .eslintrc.json
 ├── next-env.d.ts

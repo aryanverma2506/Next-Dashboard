@@ -1,5 +1,5 @@
 import LoadingSpinner from "@/components/common/LoadingSpinner/LoadingSpinner";
 
 export default function Loading() {
-  return <LoadingSpinner className="pt-24 pl-60" />;
+  return <LoadingSpinner className="pt-24 md:pl-60" />;
 }
