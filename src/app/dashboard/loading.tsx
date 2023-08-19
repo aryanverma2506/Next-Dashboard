@@ -1,5 +1,7 @@
 import LoadingSpinner from "@/components/common/LoadingSpinner/LoadingSpinner";
 
 export default function Loading() {
-  return <LoadingSpinner className="pt-24 md:pl-60" />;
+  return (
+    <LoadingSpinner className="min-h-screen max-h-screen pt-24 md:pl-60" />
+  );
 }

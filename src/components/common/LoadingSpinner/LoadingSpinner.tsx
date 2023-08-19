@@ -11,8 +11,8 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = (props) => {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center min-h-screen max-h-screen ${
-        className || ""
+      className={`flex flex-col items-center justify-center ${
+        className || "min-h-screen max-h-screen"
       }`}
     >
       <div
