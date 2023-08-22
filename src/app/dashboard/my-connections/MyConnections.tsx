@@ -89,14 +89,14 @@ const MyConnections: React.FC = () => {
                 return (
                   <Card
                     key={connection._id}
-                    className="flex gap-5 p-5 h-full max-w-[350px] w-[350px]"
+                    className="flex gap-5 justify-between p-5 h-full max-w-[350px] w-[350px]"
                   >
-                    <Typography className="grid">
+                    <Typography className="grid w-4/6">
                       <strong className="mb-5">{connection.name}</strong>
                       <span>Full Stack Developer</span>
                       <span>@ Oruphones</span>
                       <Button
-                        className="bg-violet-200 text-black text-xs rounded-full normal-case h-7 px-7 mt-5"
+                        className="min-w-max bg-violet-200 text-black text-xs rounded-full normal-case h-7 px-7 mt-5"
                         onClick={() =>
                           addRemoveConnection({
                             userId: connection._id,
@@ -107,7 +107,7 @@ const MyConnections: React.FC = () => {
                         Connect
                       </Button>
                     </Typography>
-                    <div className="w-28 h-28 rounded-full">
+                    <div className="w-24 h-24 rounded-full">
                       {connection.profilePicUrl && (
                         <Image
                           width={100}
@@ -132,14 +132,14 @@ const MyConnections: React.FC = () => {
             {yourConnections.map((connection) => (
               <Card
                 key={connection._id}
-                className="flex gap-5 p-5 h-full max-w-[350px] w-[350px]"
+                className="flex gap-5 justify-between p-5 h-full max-w-[350px] w-[350px]"
               >
-                <Typography className="grid">
+                <Typography className="grid w-4/6">
                   <strong className="mb-5">{connection.name}</strong>
                   <span>Full Stack Developer</span>
                   <span>@ Oruphones</span>
                   <Button
-                    className="bg-violet-200 text-black text-xs rounded-full normal-case h-7 px-7 mt-5"
+                    className="min-w-max bg-violet-200 text-black text-xs rounded-full normal-case h-7 px-7 mt-5"
                     onClick={() =>
                       addRemoveConnection({
                         userId: connection._id,
@@ -150,7 +150,7 @@ const MyConnections: React.FC = () => {
                     Remove Connection
                   </Button>
                 </Typography>
-                <div className="w-28 h-28 rounded-full">
+                <div className="w-24 h-24 rounded-full">
                   {connection.profilePicUrl && (
                     <Image
                       width={100}

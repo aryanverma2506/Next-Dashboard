@@ -28,14 +28,16 @@ const Navbar: React.FC<React.PropsWithChildren> = (props) => {
             <span className="w-3/4 md:w-full border border-yellow-400" />
             <span className="w-1/4 md:w-1/2 border border-black" />
           </Button>
-          <Image
-            width={80}
-            height={80}
-            priority
-            alt="Logo"
-            src={`/assets/logo.svg`}
-            style={{ width: "auto" }}
-          />
+          <div>
+            <Image
+              width={80}
+              height={80}
+              priority
+              alt="Logo"
+              src={`/assets/logo.svg`}
+              style={{ width: "auto" }}
+            />
+          </div>
         </div>
         <div className="flex items-center gap-4">
           <i className="fa-light fa-bell fa-xl"></i>

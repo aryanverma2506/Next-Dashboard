@@ -444,21 +444,23 @@ const MyProfile: React.FC = () => {
                 </Typography>
                 {experiencesCtx.map((experience) => (
                   <InfoCard key={new Date().toISOString() + Math.random()}>
-                    <div className="flex justify-between">
-                      <div className="grid grid-cols-2 gap-5 w-1/2 text-sm break-all sm:break-words">
+                    <div className="flex flex-col sm:flex-row gap-5 items-center sm:justify-between">
+                      <div className="grid grid-cols-2 gap-5 w-full sm:w-1/2 text-sm break-all sm:break-words">
                         <strong>{experience.duration}</strong>
                         <strong>{experience.employmentType}</strong>
                         <span>{experience.organizationName}</span>
                         <span>-- {experience.jobRole}</span>
                       </div>
-                      <Image
-                        width={80}
-                        height={80}
-                        priority
-                        alt="logo"
-                        src={`/assets/logo.svg`}
-                        style={{ width: "auto" }}
-                      />
+                      <div>
+                        <Image
+                          width={80}
+                          height={80}
+                          priority
+                          alt="logo"
+                          src={`/assets/logo.svg`}
+                          style={{ width: "auto" }}
+                        />
+                      </div>
                     </div>
                   </InfoCard>
                 ))}
