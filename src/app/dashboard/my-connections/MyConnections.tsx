@@ -89,7 +89,7 @@ const MyConnections: React.FC = () => {
                 return (
                   <Card
                     key={connection._id}
-                    className="flex gap-5 p-5 h-full overflow-y-auto"
+                    className="flex gap-5 p-5 h-full max-w-[350px] w-[350px]"
                   >
                     <Typography className="grid">
                       <strong className="mb-5">{connection.name}</strong>
@@ -132,7 +132,7 @@ const MyConnections: React.FC = () => {
             {yourConnections.map((connection) => (
               <Card
                 key={connection._id}
-                className="flex gap-5 p-5 h-full overflow-y-auto"
+                className="flex gap-5 p-5 h-full max-w-[350px] w-[350px]"
               >
                 <Typography className="grid">
                   <strong className="mb-5">{connection.name}</strong>

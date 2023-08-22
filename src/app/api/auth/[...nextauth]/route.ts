@@ -1,29 +1,61 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import httpClient from "@/utils/http-client";
+import bcrypt from "bcryptjs";
+
+import redis from "@/lib/redis";
+import UserModel from "@/models/user-model";
 
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      credentials: {},
+      name: "Credentials",
+      credentials: {
+        email: {
+          label: "E-mail",
+          type: "email",
+          placeholder: "E-mail",
+        },
+        password: {
+          label: "Password",
+          type: "password",
+        },
+      },
       async authorize(credentials, req) {
         try {
-          const responseData = await httpClient({
-            url: "/api/auth/login",
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              ...credentials,
-            }),
-          });
-          const user = responseData.userInfo;
-          if (user) {
-            return user;
-          } else {
+          if (!credentials) {
             return null;
           }
+
+          const { email, password } = credentials;
+          const cachedUserData = await redis.get(email);
+
+          if (cachedUserData) {
+            const user = JSON.parse(cachedUserData);
+            if (await bcrypt.compare(password, user.password)) {
+              return { id: user._id, email: email };
+            }
+          }
+
+          const existingUser = await UserModel.findOne({ email: email }).select(
+            {
+              updatedAt: 0,
+              createdAt: 0,
+              __V: 0,
+            }
+          );
+
+          if (!existingUser || !(await existingUser.matchPassword(password))) {
+            return null;
+          }
+
+          const existingUserObject = existingUser.toObject();
+
+          await redis.set(email, JSON.stringify(existingUserObject));
+
+          return { id: existingUser._id, email: email };
         } catch (error: any) {
           console.error(error);
+          return null;
         }
       },
     }),

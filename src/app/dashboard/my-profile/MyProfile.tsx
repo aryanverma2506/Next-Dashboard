@@ -457,7 +457,7 @@ const MyProfile: React.FC = () => {
                         priority
                         alt="logo"
                         src={`/assets/logo.svg`}
-                        style={{ width: "auto !important" }}
+                        style={{ width: "auto" }}
                       />
                     </div>
                   </InfoCard>

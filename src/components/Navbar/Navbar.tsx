@@ -34,7 +34,7 @@ const Navbar: React.FC<React.PropsWithChildren> = (props) => {
             priority
             alt="Logo"
             src={`/assets/logo.svg`}
-            style={{ width: "auto !important" }}
+            style={{ width: "auto" }}
           />
         </div>
         <div className="flex items-center gap-4">
